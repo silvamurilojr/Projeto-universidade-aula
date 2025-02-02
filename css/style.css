@@ -3,8 +3,8 @@ body, h1, h2, h3, ul, li, p, dd, dt, dl {
     padding: 0%;
 }
 
-img{
-    display:  block;
+img {
+    display: block;
     max-width: 100%;
 }
 
@@ -14,8 +14,7 @@ ul {
 
 body {
     background-color: #e3dbc5;
-    color: #222
-    -webkit-font-smoothing: antialiased;
+    color: #222 -webkit-font-smoothing: antialiased;
     display: grid;
     grid-template-columns: 1fr 300px minmax(600px, 1100px) 1fr;
 }
@@ -100,6 +99,10 @@ background: #c29788;
     grid-column: 1;
 }
 
+.felinos-lista {
+    cursor: pointer;
+}
+
 .felinos-lista::-webkit-scrollbar {
     width: 20px;
 }
@@ -112,6 +115,12 @@ background: #c29788;
 
 .faq-perg {
     grid-column: 1 /5;
+}
+
+.titulo-faq {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    padding-top: 4rem;
 }
 
 .faq-perg dt {
@@ -135,6 +144,13 @@ background: #c29788;
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 1rem;
     margin-left: 30px;
+}
+
+.titulo-contato {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 .mapa {
@@ -178,22 +194,27 @@ background: #c29788;
     .menu, .grid-section, .copy {
         grid-column: 2;
     }
+
     .grid-section {
         grid-template-columns: 100px 1fr;
         grid-gap: 10px
     }
+
     .felinos-lista: {
         grid-column: 2;
     }
     .faq-lista, .dados, .mapa{
         grid-column: 1 / 3;
     }
+
     .grid-section h1 {
         font-size: 3rem;
     }
+
     .menu {
         margin-top: 0px;
     }
+
     .copy {
         margin-bottom: 0px;
     }
@@ -214,7 +235,19 @@ background: #c29788;
         transform: translate3d(-30px, 0, 0);
     }
 }
+
 to {
+    opacity: 1;
+    transform: translate(0, 0, 0);
+}
+
+.js.js-scroll {
+    opacity: 0;
+    transform: translate(-30px, 0, 0);
+    transition: .3s;
+}
+
+.js.js-scroll.ativo {
     opacity: 1;
     transform: translate(0, 0, 0);
 }
